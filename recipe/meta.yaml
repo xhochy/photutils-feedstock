@@ -1,7 +1,7 @@
 {% set name = "photutils" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "a02a0b205c058467f10d1605acfcef8b56695a81005ee2136c64914e55c1b42d" %}
+{% set hash_value = "71e659e1413f11afb66ee21e403c3b2eb1316afba1e320a62bd34fba08e62d6f" %}
 
 package:
   name: '{{ name|lower }}'
@@ -27,6 +27,7 @@ requirements:
     - python
     - astropy
     - numpy >=1.9
+    - six
 
 test:
   imports:
@@ -38,6 +39,7 @@ test:
     - photutils.detection
     - photutils.extern
     - photutils.geometry
+    - photutils.isophote
     - photutils.morphology
     - photutils.psf
     - photutils.psf.matching
