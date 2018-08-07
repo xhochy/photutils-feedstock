@@ -22,8 +22,8 @@ requirements:
   host:
     - python
     - setuptools
-    - numpy        # [not (win and py36)]
-    - numpy         # [win and py36]
+    - numpy 1.10.*  # [py35]
+    - numpy 1.11.*  # [py36]
     - cython
   run:
     - python
