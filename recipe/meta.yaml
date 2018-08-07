@@ -1,7 +1,7 @@
 {% set name = "photutils" %}
-{% set version = "0.4" %}
+{% set version = "0.5" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "71e659e1413f11afb66ee21e403c3b2eb1316afba1e320a62bd34fba08e62d6f" %}
+{% set hash_value = "4cc4f14209dc01eb6cbbbea683ebdf5942d80b852a54db86a5d675f4e855dcd2" %}
 
 package:
   name: '{{ name|lower }}'
@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -22,14 +22,14 @@ requirements:
   host:
     - python
     - setuptools
-    - numpy        # [not (win and py36)]
-    - numpy         # [win and py36]
+    - numpy 1.10.*  # [py35]
+    - numpy 1.11.*  # [py36]
     - cython
   run:
     - python
     - astropy
     - {{ pin_compatible('numpy') }}
-    - six
+    - pytest-astropy
 
 test:
   imports:
