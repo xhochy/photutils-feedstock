@@ -29,7 +29,7 @@ requirements:
     - python
     - astropy
     - {{ pin_compatible('numpy') }}
-    - six
+    - pytest-astropy
 
 test:
   imports:
