@@ -1,7 +1,7 @@
 {% set name = "photutils" %}
-{% set version = "0.4" %}
+{% set version = "0.4.1" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "71e659e1413f11afb66ee21e403c3b2eb1316afba1e320a62bd34fba08e62d6f" %}
+{% set hash_value = "8bbb9d298db4e9322abe4f4737e4e39d4822305f3e554e0f09ae8ecc82a23ce1" %}
 
 package:
   name: '{{ name|lower }}'
@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
